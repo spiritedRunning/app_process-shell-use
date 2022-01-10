@@ -69,6 +69,7 @@ app_process -Djava.class.path=/data/local/tmp/classes.dex /system/bin shellServi
 // 会一直运行除非手动kill pid或者重启设备
 nohup app_process -Djava.class.path=/data/local/tmp/classes.dex /system/bin --nice-name=${serviceName} shellService.Main
 ```
+可参考[Android免root获取shell级权限实现静默卸载安装](https://juejin.cn/post/6844903936785137671)
 
 这时就能看到已经成功运行啦：
 
