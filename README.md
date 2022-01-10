@@ -63,7 +63,11 @@ public class Main {
 ```shell
 adb push classes.dex /data/local/tmp
 cd /data/local/tmp
+// 拔掉数据线会终止服务
 app_process -Djava.class.path=/data/local/tmp/classes.dex /system/bin shellService.Main
+
+// 会一直运行除非手动kill pid或者重启设备
+nohup app_process -Djava.class.path=/data/local/tmp/classes.dex /system/bin --nice-name=${serviceName} shellService.Main
 ```
 
 这时就能看到已经成功运行啦：
